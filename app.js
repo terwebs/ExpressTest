@@ -33,18 +33,10 @@ app.get('/', routes.index);
 app.get('/users', user.list);
 
 
-app.get('/users', function(req, res){
-	res.send('user selected is '+ req.query.id); 
-});
+
 app.get('/users/:id', function(req, res){
 	res.send('user selected is '+ req.params.id);
 });
-
-app.get('/users/create', function(req,res){
-	res.send('This page is for creating customers');
-})
-
-
 
 http.createServer(app).listen(app.get('port'), function(){
   console.log('Express server listening on port ' + app.get('port'));
